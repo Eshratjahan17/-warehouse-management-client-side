@@ -1,0 +1,30 @@
+.footer {
+  background-color: #063945;
+  color: white;
+  padding: 20px;
+}
+.about-us p {
+  text-align: justify;
+}
+.social-icon a {
+  width: 70px;
+  cursor: pointer;
+}
+.quick-access {
+  display: flex;
+  flex-direction: column;
+}
+hr {
+  margin-bottom: 0;
+}
+.quick-access a {
+  text-decoration: none;
+  color: #ffffff82;
+}
+.location img {
+  width: 20px;
+  margin-right: 20px;
+}
+.location p {
+  text-align: left;
+}

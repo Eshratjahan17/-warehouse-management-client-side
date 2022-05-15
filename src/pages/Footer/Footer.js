@@ -1,15 +1,97 @@
+
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import dribble from '../../images/dribble.svg';
+import fb from '../../images/fb.svg';
+import envelop from '../../images/icons/envelop.svg';
+import fax from '../../images/icons/fax.svg';
+import location from '../../images/icons/location.svg';
+import phone from '../../images/icons/phone.svg';
+import watch from '../../images/icons/watch.svg';
+import printerest from '../../images/printerest.svg';
+import twiteer from '../../images/twiteer.svg';
+import './footer.css';
 
 const Footer = () => {
   return (
-    <div>
+    <div className="footer">
       <Container>
-        <Row md={4} sm={12} lg={4}>
-          <Col xs={12}>1 of 3</Col>
-          <Col xs={12}>2 of 3</Col>
-          <Col xs={12}>3 of 3</Col>
+        <Row md={3} sm={12} lg={3}>
+          <Col className="about-us" xs={12}>
+            <div>
+              <h3 className="mb-2 text-start">SB warehouse</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nisi
+                saepe sapiente cupiditate odit quasi fuga exercitationem ad?
+                Adipisci suscipit fugiat eveniet aperiam voluptatum eaque
+                delectus! Itaque, nisi accusantium. Recusandae.
+              </p>
+            </div>
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="Product name "
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <Button variant="secondary" id="button-addon2">
+                Search
+              </Button>
+            </InputGroup>
+          </Col>
+          <Col xs={12} className="my-5">
+            <h5>Quick Access</h5>
+            <div className="quick-access ">
+              <a href="#">Home</a>
+              <a href="#">FAQ</a>
+              <a href="#">Products</a>
+              <a href="#">Reviwes</a>
+              <a href="#">About Us</a>
+              <a href="#">Sign up</a>
+            </div>
+          </Col>
+          <Col xs={12} className="my-5 location">
+            <h5 className='text-start ms-5 mb-3 '>Our Location</h5>
+            <p>
+              <img  src={location} alt="" /> 14 Tottenham
+              Court, London, England.
+            </p>
+            <p>
+              <img  src={fax} alt="" />
+              (102) 6666 8888
+            </p>
+            <p>
+              <img  src={envelop} alt="" />
+              info@zooka.com
+            </p>
+            <p>
+              <img  src={phone} alt="" />
+              (102) 8888 9999
+            </p>
+            <p>
+              
+              <img  src={watch} alt="" />
+              Mon - Sat: 9:00 - 18:00
+            </p>
+          </Col>
         </Row>
+        <hr></hr>
+        <div className="d-flex justify-content-center">
+          <div className="social-icon d-flex mt-4 ">
+            <a href="#">
+              <img src={fb} alt="" />
+            </a>
+            <a href="#">
+              <img src={dribble} alt="" />
+            </a>
+            <a href="#">
+              <img src={printerest} alt="" />
+            </a>
+            <a href="#">
+              <img src={twiteer} alt="" />
+            </a>
+          </div>
+        </div>
+        <small>&copy;copyright Eshrat jahan2022. All rights reserved.</small>
       </Container>
     </div>
   );
