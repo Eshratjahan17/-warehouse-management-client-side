@@ -7,7 +7,7 @@ import './Headers.css';
 const Headers = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Container fluid className="mx-5">
+      <Container fluid >
         <Navbar.Brand href="#">SB WareHouse </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

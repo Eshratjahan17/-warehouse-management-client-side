@@ -1,0 +1,21 @@
+span {
+  font-weight: bold;
+}
+.card-div {
+  background-color: #b4d6c1;
+  border-radius: 20px;
+  margin: 10px 20px;
+}
+.btn {
+  color: azure;
+  background-color: #063945;
+  border-radius: 10px;
+  border: 2px solid #063945;
+
+  padding: 5px 10px;
+}
+.btn:hover {
+  color: #063945;
+  background-color: white;
+  border: 3px solid #063945;
+}

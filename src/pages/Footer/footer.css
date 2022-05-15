@@ -28,3 +28,12 @@ hr {
 .location p {
   text-align: left;
 }
+.search-btn {
+  background-color: #ffffff82;
+  border-radius: 5px;
+  border: 2px solid #ffffff82;
+}
+.search-btn:hover {
+  background-color: #063945;
+  color: #ffffff;
+}

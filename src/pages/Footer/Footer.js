@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button, Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Col, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import dribble from '../../images/dribble.svg';
 import fb from '../../images/fb.svg';
 import envelop from '../../images/icons/envelop.svg';
@@ -19,7 +19,7 @@ const Footer = () => {
         <Row md={3} sm={12} lg={3}>
           <Col className="about-us" xs={12}>
             <div>
-              <h3 className="mb-2 text-start">SB warehouse</h3>
+              <h3 className="mb-2 mt-5 text-start">SB warehouse</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nisi
                 saepe sapiente cupiditate odit quasi fuga exercitationem ad?
@@ -33,9 +33,9 @@ const Footer = () => {
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
               />
-              <Button variant="secondary" id="button-addon2">
+              <button className='search-btn' id="button-addon2">
                 Search
-              </Button>
+              </button>
             </InputGroup>
           </Col>
           <Col xs={12} className="my-5">
