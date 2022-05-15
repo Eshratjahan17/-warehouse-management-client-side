@@ -1,0 +1,14 @@
+.nav {
+  text-decoration: none;
+  color: #063945;
+}
+.nav:hover {
+  background-color: #063945;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+}
+.dropdown {
+  text-decoration: none;
+  color: #063945;
+}

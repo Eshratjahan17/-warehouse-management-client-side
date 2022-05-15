@@ -16,10 +16,7 @@ import Signup from './pages/Signup/Signup';
 function App() {
   return (
     <div className="App">
-      <h1>
-        welcome to react after so long eshrat,don't worry u'll definately make
-        it
-      </h1>
+      
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
