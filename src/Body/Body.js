@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Carousel, Col, Row } from 'react-bootstrap';
+import { Card, Carousel, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import img1 from '../images/banner/1.jpg';
 import img2 from '../images/banner/2.jpg';
@@ -53,9 +53,12 @@ const Body = () => {
                 </p>
               </div>
 
-              <Button className="btn-update" size="lg">
-                Update button
-              </Button>
+              
+                <a className="btn-update" href="/inventory/:id">
+                 
+                  Update button
+                </a>
+              
             </Card.Body>
           </Card>
         </Col>

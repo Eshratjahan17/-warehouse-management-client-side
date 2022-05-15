@@ -1,0 +1,7 @@
+.add-button {
+  text-decoration: none;
+  color: white;
+}
+.add-button:hover {
+  color: black;
+}

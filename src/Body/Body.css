@@ -6,7 +6,9 @@ span {
   border-radius: 20px;
   margin: 10px 20px;
 }
-.btn {
+.btn-update {
+  text-decoration: none;
+  border: none;
   color: azure;
   background-color: #063945;
   border-radius: 10px;
@@ -14,7 +16,7 @@ span {
 
   padding: 5px 10px;
 }
-.btn:hover {
+.btn-update:hover {
   color: #063945;
   background-color: white;
   border: 3px solid #063945;

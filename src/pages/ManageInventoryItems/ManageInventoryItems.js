@@ -2,6 +2,7 @@ import Table from "rc-table";
 import React from 'react';
 import { Button } from "react-bootstrap";
 import trash from "../../images/trash.svg";
+import './ManageInventoryItems.css';
 
 
 
@@ -62,7 +63,11 @@ const ManageInventoryItems = () => {
       </div>
 
       <div>
-        <Button size="lg">Add new item</Button>
+        <Button size="lg">
+          <a className="add-button" href="/addnewitem">
+            Add new item
+          </a>
+        </Button>
       </div>
     </div>
   );

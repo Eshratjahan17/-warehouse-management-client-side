@@ -1,0 +1,7 @@
+.update-btn {
+  text-decoration: none;
+  color: white;
+}
+.update-btn:hover {
+  color: black;
+}
