@@ -23,7 +23,7 @@ const Headers = () => {
             </Nav.Link>
             <Nav.Link href="#action2">
               <Link className="nav" to="/manageinventory">
-                Phones
+                Products
               </Link>
             </Nav.Link>
 
@@ -39,18 +39,18 @@ const Headers = () => {
               className="me-2"
               id="navbarScrollingDropdown"
             >
-              <NavDropdown.Item href="#action3">
+              <NavDropdown.Item >
                 <Link className="dropdown" to="/myitems">
                   My Items
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item >
                 <Link className="dropdown" to="/addnewitem">
                   Add Items
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
+              <NavDropdown.Item >
                 <Link className="dropdown" to="/manageinventory">
                   Manage Items
                 </Link>

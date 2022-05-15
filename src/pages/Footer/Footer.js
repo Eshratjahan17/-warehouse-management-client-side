@@ -14,7 +14,7 @@ import './footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer mt-5">
       <Container>
         <Row md={3} sm={12} lg={3}>
           <Col className="about-us" xs={12}>
@@ -33,7 +33,7 @@ const Footer = () => {
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
               />
-              <button className='search-btn' id="button-addon2">
+              <button className="search-btn" id="button-addon2">
                 Search
               </button>
             </InputGroup>
@@ -42,34 +42,32 @@ const Footer = () => {
             <h5>Quick Access</h5>
             <div className="quick-access ">
               <a href="#">Home</a>
-              <a href="#">FAQ</a>
-              <a href="#">Products</a>
+              <a href="/blogs">FAQ</a>
+              <a href="/manageinventory">Products</a>
               <a href="#">Reviwes</a>
               <a href="#">About Us</a>
-              <a href="#">Sign up</a>
+              <a href="/signup">Sign up</a>
             </div>
           </Col>
           <Col xs={12} className="my-5 location">
-            <h5 className='text-start ms-5 mb-3 '>Our Location</h5>
+            <h5 className="text-start ms-5 mb-3 ">Our Location</h5>
             <p>
-              <img  src={location} alt="" /> 14 Tottenham
-              Court, London, England.
+              <img src={location} alt="" /> 14 Tottenham Court, London, England.
             </p>
             <p>
-              <img  src={fax} alt="" />
+              <img src={fax} alt="" />
               (102) 6666 8888
             </p>
             <p>
-              <img  src={envelop} alt="" />
+              <img src={envelop} alt="" />
               info@zooka.com
             </p>
             <p>
-              <img  src={phone} alt="" />
+              <img src={phone} alt="" />
               (102) 8888 9999
             </p>
             <p>
-              
-              <img  src={watch} alt="" />
+              <img src={watch} alt="" />
               Mon - Sat: 9:00 - 18:00
             </p>
           </Col>

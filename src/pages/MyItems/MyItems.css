@@ -1,0 +1,13 @@
+.trash-btn {
+  border: none;
+  background-color: #b4d6c1;
+  cursor: pointer;
+}
+.item-table {
+  background-color: #b4d6c1;
+  width: 500px;
+
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(13, 12, 12, 0.568);
+}
