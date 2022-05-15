@@ -8,7 +8,7 @@ const Headers = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid className="mx-5">
-        <Navbar.Brand href="#">SmartPhone WareHouse</Navbar.Brand>
+        <Navbar.Brand href="#">SB WareHouse </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
