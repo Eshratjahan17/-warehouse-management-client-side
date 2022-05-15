@@ -4,6 +4,7 @@ import AddItems from './pages/AddItems/AddItems';
 import Blogs from './pages/Blogs/Blogs';
 import Contact from './pages/Contact/Contact';
 import Footer from './pages/Footer/Footer';
+import Headers from './pages/Headers/Headers';
 import Home from './pages/Home/Home';
 import ItemDetails from './pages/ItemDetails/ItemDetails';
 import Login from './pages/Login/Login';
@@ -16,6 +17,7 @@ import Signup from './pages/Signup/Signup';
 function App() {
   return (
     <div className="App">
+      <Headers></Headers>
       
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -33,6 +35,7 @@ function App() {
         <Route path="/notfound" element={<NotFound></NotFound>}></Route>
         
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

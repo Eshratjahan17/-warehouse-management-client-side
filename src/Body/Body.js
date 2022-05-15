@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Carousel, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import img1 from '../images/banner/1.jpg';
 import img2 from '../images/banner/2.jpg';
 import img3 from '../images/banner/3.jpg';
@@ -59,6 +60,9 @@ const Body = () => {
           </Card>
         </Col>
       </Row>
+      <h3 className="my-5">
+        <Link to="/manageinventory">Manage Items</Link>
+      </h3>
     </div>
   );
 };
