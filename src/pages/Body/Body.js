@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Carousel, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import img1 from '../images/banner/1.jpg';
-import img2 from '../images/banner/2.jpg';
-import img3 from '../images/banner/3.jpg';
+import img1 from '../../images/banner/1.jpg';
+import img2 from "../../images/banner/2.jpg";
+import img3 from "../../images/banner/3.jpg";
 import './Body.css';
 
 const Body = () => {
