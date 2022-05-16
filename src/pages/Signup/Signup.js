@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Button, Form, Spinner } from 'react-bootstrap';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from '../../firebase.init';
 import google from '../../images/Google_Logo.svg';
 import './signup.css';
@@ -14,7 +16,11 @@ const Signup = () => {
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, loading, googleError] = useSignInWithGoogle(auth);
-    
+     const [sendEmailVerification, sending, verificationerror] =
+       useSendEmailVerification(auth);
+     const navigate = useNavigate();
+     const location = useLocation();
+     const from = location.state?.from?.pathname || "/";
 
 
   const handleEmail=(event)=>{
@@ -26,10 +32,30 @@ const Signup = () => {
   const handleConfirmPassword=(event)=>{
     setConfirmPassword(event.target.value);
   }
-  const handlesubmit=(event)=>{
+  const handlesubmit=async(event)=>{
     event.preventDefault();
-    createUserWithEmailAndPassword(email,password);
+    if(password === confirmPassword && password.length>6)
+    {
+       createUserWithEmailAndPassword(email, password);
+        await sendEmailVerification();
+        toast("Sent email");
+
+    }else{
+      setError("please give a valid password");
+     toast("Please enter a valid password");
+      return false;
+
+    }
+   
   }
+  
+
+   if (user) {
+     navigate(from, { replace: true });
+   }
+   if (loading) {
+     <Spinner style={{height:"50px"}} className='w-50' animation="border" variant="success" />;
+   }
   return (
     <div className="signup">
       <h1 className="my-4">Please sign up !!!</h1>
@@ -61,12 +87,18 @@ const Signup = () => {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" size="lg" className="my-3 ">
+          <Button
+            variant="success"
+            type="submit"
+            size="lg"
+            className="my-3 rounded-pill"
+          >
             Sign up
           </Button>
         </Form>
       </div>
-
+      
+      <p className='text-danger mt-3'>{googleError?.message}</p>
       <h5 className="my-3">
         Already have an account?
         <span>
@@ -81,14 +113,16 @@ const Signup = () => {
       </div>
 
       <Button
-        onClick={() => signInWithGoogle()}
-        className="google-btn mt-3"
+        onClick={() =>
+    signInWithGoogle() }
+        className="google-btn mt-3 rounded-pill"
         variant="primary"
         size="lg"
       >
         <img className="me-2 mb-1" src={google} alt="" />
         Sign up with Google
       </Button>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

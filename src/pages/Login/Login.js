@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Button, Form, Spinner } from 'react-bootstrap';
+import { useSendEmailVerification, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Login = () => {
@@ -9,16 +10,33 @@ const Login = () => {
   const [password, setPassword] = useState("");
    const [signInWithEmailAndPassword, user, loading, error] =
      useSignInWithEmailAndPassword(auth);
+    
+     const navigate=useNavigate();
+     const location=useLocation();
+     const from=location.state?.from?.pathname || '/';
      const handleEmail=(event)=>{
        setEmail(event.target.value);
      }
      const handlePassword=(event)=>{
        setPassword(event.target.value);
      }
-     const handleLogin=(event)=>{
+     if(user){
+       navigate(from,{replace:true})
+     }
+     if(loading){
+       <Spinner
+         style={{ height: "50px" }}
+         className="w-50"
+         animation="border"
+         variant="success"
+       />;
+     }
+     const handleLogin=async(event)=>{
        event.preventDefault();
        signInWithEmailAndPassword(email,password);
+        
      }
+     
   return (
     <div className="signup">
       <h1 className="my-4">Please Log in !!!</h1>
@@ -42,13 +60,20 @@ const Login = () => {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" size="lg" className="my-3 ">
+          <Button
+            variant="success"
+            type="submit"
+            size="lg"
+            className="my-3 rounded-pill"
+          >
             Log In
           </Button>
         </Form>
       </div>
       <div>
-        <p >{error?.message}</p>
+        <p class=" mt-4  text-danger">
+          {error?.message }
+        </p>
         <h5 className="my-3">
           Didn't have any account?
           <span>
