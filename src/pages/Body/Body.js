@@ -7,6 +7,8 @@ import img3 from "../../images/banner/3.jpg";
 import './Body.css';
 
 const Body = () => {
+
+  
   return (
     <div>
       <Carousel>
@@ -25,6 +27,7 @@ const Body = () => {
           <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      
 
       {/* cards */}
 

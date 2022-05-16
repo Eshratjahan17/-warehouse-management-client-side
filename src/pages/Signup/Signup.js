@@ -53,8 +53,13 @@ const Signup = () => {
    if (user) {
      navigate(from, { replace: true });
    }
-   if (loading) {
-     <Spinner style={{height:"50px"}} className='w-50' animation="border" variant="success" />;
+   if (loading || sending) {
+     <Spinner
+       style={{ height: "50px" }}
+       className="w-50"
+       animation="border"
+       variant="success"
+     />;
    }
   return (
     <div className="signup">
