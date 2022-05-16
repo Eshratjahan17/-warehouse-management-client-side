@@ -12,3 +12,16 @@
   text-decoration: none;
   color: #063945;
 }
+.login-btn {
+  text-decoration: none;
+  background-color: #063945;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.login-btn:hover {
+  text-decoration: none;
+  color: #063945;
+  background-color: white;
+  border: 3px solid #063945;
+}

@@ -14,6 +14,7 @@ const Signup = () => {
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, loading, googleError] = useSignInWithGoogle(auth);
+    
 
 
   const handleEmail=(event)=>{

@@ -1,10 +1,18 @@
 
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Headers.css';
 
 const Headers = () => {
+  const [user]=useAuthState(auth);
+  console.log(user);
+  const handleSignout=()=>{
+    signOut(auth);
+  }
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid >
@@ -33,7 +41,9 @@ const Headers = () => {
               </Link>
             </Nav.Link>
           </Nav>
-          <Nav className="d-flex ">
+          {
+            user?
+            <Nav className="d-flex ">
             <NavDropdown
               title="User Name"
               className="me-2"
@@ -56,8 +66,14 @@ const Headers = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Button variant="outline-success">Sign Out</Button>
+            <Button onClick={handleSignout}variant="outline-success">Sign Out</Button>
           </Nav>
+
+            :
+            
+              <Link className=' login-btn' to="/login">Log in</Link>
+            
+          }
         </Navbar.Collapse>
       </Container>
     </Navbar>
