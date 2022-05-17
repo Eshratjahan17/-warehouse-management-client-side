@@ -12,7 +12,6 @@ import ManageInventoryItems from './pages/ManageInventoryItems/ManageInventoryIt
 import MyItems from './pages/MyItems/MyItems';
 import NotFound from './pages/NotFound/NotFound';
 import RequireAuth from './pages/RequireAuth/RequireAuth';
-import Reviwes from './pages/Reviwes/Reviwes';
 import Signup from './pages/Signup/Signup';
 
 function App() {
@@ -38,9 +37,9 @@ function App() {
         <Route
           path="/manageinventory"
           element={
-            <RequireAuth>
+           
               <ManageInventoryItems></ManageInventoryItems>
-            </RequireAuth>
+           
           }
         ></Route>
         <Route path="/addnewitem" element={<AddItems></AddItems>}></Route>
@@ -48,7 +47,7 @@ function App() {
         <Route path="/footer" element={<Footer></Footer>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/reviwes" element={<Reviwes></Reviwes>}></Route>
+        
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

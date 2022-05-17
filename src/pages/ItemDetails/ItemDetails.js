@@ -11,7 +11,7 @@ const ItemDetails = () => {
   console.log(id);
   const [product,setProduct]=useState([]);
   useEffect(()=>{
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://stormy-temple-95989.herokuapp.com/inventory/${id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
@@ -28,7 +28,7 @@ const ItemDetails = () => {
           <Col>
             <Card className="card-div ">
               <Card.Img
-                className="card-img"
+                className="card-img image"
                 variant="top"
                 src={product.picture}
               />

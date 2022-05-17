@@ -36,8 +36,8 @@ const Headers = () => {
             </Nav.Link>
 
             <Nav.Link href="#reviwes">
-              <Link className="nav" to="/reviwes">
-                Reviwes
+              <Link className="nav" to="/blogs">
+                Blogs
               </Link>
             </Nav.Link>
           </Nav>

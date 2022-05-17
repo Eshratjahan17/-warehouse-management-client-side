@@ -21,10 +21,10 @@ const Footer = () => {
             <div>
               <h3 className="mb-2 mt-5 text-start">SB warehouse</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nisi
-                saepe sapiente cupiditate odit quasi fuga exercitationem ad?
-                Adipisci suscipit fugiat eveniet aperiam voluptatum eaque
-                delectus! Itaque, nisi accusantium. Recusandae.
+                A warehouse management system is a set of policies and processes
+                intended to organise the work of a warehouse or distribution
+                centre, and ensure that such a facility can operate efficiently
+                and meet its objectives
               </p>
             </div>
             <InputGroup className="mb-3">
