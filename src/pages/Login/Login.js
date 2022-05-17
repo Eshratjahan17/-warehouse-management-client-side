@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Form, Spinner } from 'react-bootstrap';
-import { useSendEmailVerification, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
        setPassword(event.target.value);
      }
      if(user){
-       navigate(from,{replace:true})
+      //  navigate(from,{replace:true})
      }
      if(loading){
        <Spinner
@@ -33,7 +33,10 @@ const Login = () => {
      }
      const handleLogin=async(event)=>{
        event.preventDefault();
-       signInWithEmailAndPassword(email,password);
+      await signInWithEmailAndPassword(email,password);
+      const { data } = await axios.post("http://localhost:5000/login",{email});
+      localStorage.setItem('accessToken',data.accessToken);
+      navigate(from, { replace: true });
         
      }
      
