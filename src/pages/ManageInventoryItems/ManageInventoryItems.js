@@ -1,17 +1,23 @@
 import Table from "rc-table";
 import React from 'react';
 import { Button } from "react-bootstrap";
+import useData from "../../Hooks/useData";
 import trash from "../../images/trash.svg";
 import './ManageInventoryItems.css';
 
 
 
+
+
 const ManageInventoryItems = () => {
+  const [products,setProducts]=useData();
+  console.log(products);
+
   const columns = [
     {
       title: "Id",
       dataIndex: "Id",
-      key: "Id",
+      key: "_Id",
       width: 100,
     },
     {
@@ -45,21 +51,18 @@ const ManageInventoryItems = () => {
       key: "operations",
       render: () => (
         <a href="#">
-          <button className="trash-btn">
+          <button onClick={()=>handleDelete()} className="trash-btn">
             <img src={trash} alt="" />
           </button>
         </a>
       ),
     },
   ];
-  const data = [
-    { ProductName: "Iphone",Id:1, quantity: 28, price: 5000,supplier:"Eshrat", key: "1" },
-    { ProductName: "Sumsung",Id:2, quantity: 36, price: 4000,supplier:"Effat", key: "2" },
-  ];
+  
   return (
     <div>
       <div className="d-flex  justify-content-center my-5 my-items">
-        <Table className="item-table" columns={columns} data={data} />
+        <Table className="item-table" columns={columns} data={products} />
       </div>
 
       <div>

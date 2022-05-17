@@ -18,6 +18,7 @@ const ItemDetails = () => {
       .then((data) => setProduct(data));
 
   },[]);
+ 
   
   
   return (
@@ -51,9 +52,12 @@ const ItemDetails = () => {
                   {product.price}
                 </p>
 
-                <Button className="btn-update" size="lg">
+                <Button
+                
+                  className="btn-update"
+                  size="lg"
+                >
                   <a className="update-btn" href="/inventory/:id">
-                   
                     Deliverd
                   </a>
                 </Button>
