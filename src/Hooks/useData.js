@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useData = () => {
+  
   const [products,setProducts]=useState([]);
   useEffect(()=>{
     fetch("http://localhost:5000/products")

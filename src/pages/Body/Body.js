@@ -11,6 +11,7 @@ import './Body.css';
 const Body = () => {
 
   const [products,setProducts]=useData();
+  
   const product = products.slice(0, 6);
   // console.log(product);
   
@@ -33,12 +34,16 @@ const Body = () => {
         </Carousel.Item>
       </Carousel>
       {/* cards */}
-     <div class="row row-cols-1 row-cols-md-3 g-5 mx-5 my-5">
-        {product.map((bodyProduct) => <BodyItems key={bodyProduct._id}
-        bodyProduct={bodyProduct}
-        ></BodyItems>)}
-      </div>
-
+       
+        <div class="row row-cols-1 row-cols-md-3 g-5 mx-5 my-5">
+          {product.map((bodyProduct) => (
+            <BodyItems
+              key={bodyProduct._id}
+              bodyProduct={bodyProduct}
+            ></BodyItems>
+          ))}
+        </div>
+      
       <h3 className="my-5">
         <Link to="/manageinventory">Manage Items</Link>
       </h3>
