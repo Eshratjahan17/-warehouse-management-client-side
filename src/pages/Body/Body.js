@@ -12,7 +12,7 @@ const Body = () => {
 
   const [products,setProducts]=useData();
   const product = products.slice(0, 6);
-  console.log(product);
+  // console.log(product);
   
   return (
     <div>

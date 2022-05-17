@@ -1,62 +1,79 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import './ItemDetails.css';
 
+
 const ItemDetails = () => {
+  let {id}=useParams();
+  
+  console.log(id);
+  const [product,setProduct]=useState([]);
+  useEffect(()=>{
+    const url = `http://localhost:5000/inventory/${id}`;
+    console.log(url);
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+
+  },[]);
+  
   
   return (
     <div>
-      <Row xs={1} md={2} lg={2} className="d-flex justify-content-center">
-        <Col>
-          <Card className="card-div ">
-            <Card.Img
-              className="card-img"
-              variant="top"
-              src="https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-x-space-gray.png"
+      <div>
+        <Row xs={1} md={2} lg={2} className="d-flex justify-content-center">
+          <Col>
+            <Card className="card-div ">
+              <Card.Img
+                className="card-img"
+                variant="top"
+                src={product.picture}
+              />
+              <Card.Body>
+                <Card.Title>{product.productName}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  {product.SupplierName}
+                </Card.Subtitle>
+                <Card.Text>{product.about}</Card.Text>
+
+                <p>
+                  <span>Id:</span>
+                  {product._id}
+                </p>
+                <p>
+                  <span>Quantity:</span>
+                  {product.quantity}
+                </p>
+                <p>
+                  <span>price:</span>
+                  {product.price}
+                </p>
+
+                <Button className="btn-update" size="lg">
+                  <a className="update-btn" href="/inventory/:id">
+                   
+                    Deliverd
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <div className="w-50 mx-auto">
+          <h3>Restock items</h3>
+          <InputGroup className="mb-3">
+            <FormControl
+              placeholder="Enter Quantity "
+              aria-label="Product Quantity"
+              aria-describedby="basic-addon2"
             />
-            <Card.Body>
-              <Card.Title>Name</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Supplier Name
-              </Card.Subtitle>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-
-              <p>
-                <span>Id:</span>FSAA$_AD
-              </p>
-              <p>
-                <span>Quantity:</span>5
-              </p>
-              <p>
-                <span>Quantity:</span>5
-              </p>
-
-              <Button className="btn-update" size="lg">
-                <a className="update-btn" href="/inventory/:id">
-                  {" "}
-                  Deliverd
-                </a>
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-      <div className="w-50 mx-auto">
-        <h3>Restock items</h3>
-        <InputGroup className="mb-3">
-          <FormControl
-            placeholder="Enter Quantity "
-            aria-label="Product Quantity"
-            aria-describedby="basic-addon2"
-          />
-          <Button variant="outline-secondary" id="button-addon2">
-            Restock
-          </Button>
-        </InputGroup>
+            <Button variant="outline-secondary" id="button-addon2">
+              Restock
+            </Button>
+          </InputGroup>
+        </div>
       </div>
     </div>
   );

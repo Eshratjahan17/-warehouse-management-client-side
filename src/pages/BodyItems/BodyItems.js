@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BodyItems.css';
 
 
 const BodyItems = ({ bodyProduct }) => {
-  const { productName, about, picture, price, quantity, supplierName } =
+  const {_id, productName, about, picture, price, quantity, supplierName } =
     bodyProduct;
+    const navigate=useNavigate();
+    const navigateToProductDetails=(id)=>{
+      navigate(`/inventory/${id}`);
+
+    }
   return (
     <div>
       <div className="col">
@@ -31,17 +37,17 @@ const BodyItems = ({ bodyProduct }) => {
             </p>
           </div>
           <div>
-            <a
+            <button
+              onClick={()=>navigateToProductDetails(_id)}
               className=" btn btn-update btn-lg"
               type="button"
               href="/inventory/:id"
             >
               Update button
-            </a>
+            </button>
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
