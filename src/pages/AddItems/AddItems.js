@@ -9,11 +9,12 @@ const AddItems = () => {
     event.preventDefault();
     const productName = event.target.productName.value;
     const supplierName = event.target.supplierName.value;
+    const email = event.target.email.value;
     const about = event.target.about.value;
     const price = event.target.price.value;
     const quantity = event.target.quantity.value;
     const picture = event.target.picture.value;
-   const productDetail= {productName, supplierName, about, price, quantity, picture};
+   const productDetail= {productName, supplierName,email, about, price, quantity, picture};
    fetch("http://localhost:5000/product", {
      method: "POST",
      headers: {
@@ -49,6 +50,14 @@ const AddItems = () => {
             type="text"
             name="supplierName"
             placeholder="Supplier Name"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Supplier Email</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Supplier Email"
           />
         </Form.Group>
         <Form.Group className="mb-3">

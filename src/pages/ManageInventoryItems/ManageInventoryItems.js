@@ -45,6 +45,7 @@ const ManageInventoryItems = () => {
       key: "supplierName",
       width: 200,
     },
+    
     {
       title: "price",
       dataIndex: "price",
