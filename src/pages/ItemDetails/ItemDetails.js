@@ -4,12 +4,14 @@ import { Button, Card, Col, FormControl, InputGroup, Row } from 'react-bootstrap
 import './ItemDetails.css';
 
 const ItemDetails = () => {
+  
   return (
     <div>
       <Row xs={1} md={2} lg={2} className="d-flex justify-content-center">
         <Col>
           <Card className="card-div ">
             <Card.Img
+              className="card-img"
               variant="top"
               src="https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-x-space-gray.png"
             />
@@ -43,7 +45,7 @@ const ItemDetails = () => {
           </Card>
         </Col>
       </Row>
-      <div className='w-50 mx-auto'>
+      <div className="w-50 mx-auto">
         <h3>Restock items</h3>
         <InputGroup className="mb-3">
           <FormControl

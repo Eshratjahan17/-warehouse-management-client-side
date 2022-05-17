@@ -11,7 +11,6 @@ import Login from './pages/Login/Login';
 import ManageInventoryItems from './pages/ManageInventoryItems/ManageInventoryItems';
 import MyItems from './pages/MyItems/MyItems';
 import NotFound from './pages/NotFound/NotFound';
-import RequireAuth from './pages/RequireAuth/RequireAuth';
 import Reviwes from './pages/Reviwes/Reviwes';
 import Signup from './pages/Signup/Signup';
 
@@ -29,9 +28,9 @@ function App() {
         <Route
           path="/inventory/:id"
           element={
-            <RequireAuth>
+            
               <ItemDetails></ItemDetails>
-            </RequireAuth>
+            
           }
         ></Route>
 

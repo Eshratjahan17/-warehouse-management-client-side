@@ -50,7 +50,7 @@ const Signup = () => {
   }
   
 
-   if (user) {
+   if (user?.email) {
      navigate(from, { replace: true });
    }
    if (loading || sending) {
