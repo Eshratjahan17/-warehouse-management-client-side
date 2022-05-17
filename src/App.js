@@ -44,7 +44,7 @@ function App() {
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/reviwes" element={<Reviwes></Reviwes>}></Route>
-        <Route path="/notfound" element={<NotFound></NotFound>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
