@@ -1,6 +1,6 @@
 # SB wareHouse
 
-This project was bootstrapped with [Create React App]https://warehouse-977a4.web.app/).
+My website live link [Create React App]https://warehouse-977a4.web.app/).
 
 ## Short description about my project
 
