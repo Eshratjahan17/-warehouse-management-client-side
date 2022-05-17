@@ -1,18 +1,18 @@
-# Getting Started with Create React App
+# SB wareHouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App]https://warehouse-977a4.web.app/).
 
-## Available Scripts
+## Short description about my project
 
-In the project directory, you can run:
+It is an warehouse system.clients can only browse and can know about our products which is phones of diffrent brands.but they can not use this site to buy or order our products.
 
-### `npm start`
+### Features of my website
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Anyone can visit my website
+- Only authorized user have the authority to restock or delivery any product
+- to update product information user must have to log in
+- Logged in user can see only his/her added product in my item page
+- user can also add a new product in add item page.
 
 ### `npm test`
 
