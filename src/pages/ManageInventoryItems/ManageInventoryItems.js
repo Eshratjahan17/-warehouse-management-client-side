@@ -2,6 +2,7 @@ import Table from "rc-table";
 import React from 'react';
 import { Button } from "react-bootstrap";
 import useData from "../../Hooks/useData";
+import useProduct from "../../Hooks/useProduct";
 import trash from "../../images/trash.svg";
 import './ManageInventoryItems.css';
 
@@ -10,8 +11,21 @@ import './ManageInventoryItems.css';
 
 
 const ManageInventoryItems = () => {
+   
   const [products,setProducts]=useData();
-  console.log(products);
+  
+  const [phones, setPhones]=useProduct();
+ const {_id}= phones;
+
+  
+  const handleDelete=id=>{
+   
+    fetch(`http://localhost:5000/inventory/${id}`,{
+      method:"DELETE",
+    })
+    .then(res=>res.json())
+    .then(data =>console.log(data));
+  }
 
   const columns = [
     {
@@ -51,7 +65,7 @@ const ManageInventoryItems = () => {
       key: "operations",
       render: () => (
         <a href="#">
-          <button onClick={()=>handleDelete()} className="trash-btn">
+          <button onClick={() => handleDelete(_id)} className="trash-btn">
             <img src={trash} alt="" />
           </button>
         </a>
