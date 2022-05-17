@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, FormControl, InputGroup, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './ItemDetails.css';
 
 
@@ -52,11 +52,7 @@ const ItemDetails = () => {
                   {product.price}
                 </p>
 
-                <Button
-                
-                  className="btn-update"
-                  size="lg"
-                >
+                <Button className="btn-update" size="lg">
                   <a className="update-btn" href="/inventory/:id">
                     Deliverd
                   </a>
@@ -77,6 +73,9 @@ const ItemDetails = () => {
               Restock
             </Button>
           </InputGroup>
+          <h3 className="my-5">
+            <Link to="/manageinventory">Manage Items</Link>
+          </h3>
         </div>
       </div>
     </div>

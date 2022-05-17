@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const AddItems = () => {
   const handlePost=(event)=>{
@@ -20,6 +23,11 @@ const AddItems = () => {
    })
    .then(res=>res.json())
    .then(data =>console.log(data));
+   toast("Product Successfully Added !");
+    event.target.reset();
+    
+    
+
 
   }
   return (
@@ -68,6 +76,7 @@ const AddItems = () => {
           Add item
         </Button>
       </Form>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
