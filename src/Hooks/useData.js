@@ -4,7 +4,7 @@ const useData = () => {
   
   const [products,setProducts]=useState([]);
   useEffect(()=>{
-    fetch("https://stormy-temple-95989.herokuapp.com/products")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   })

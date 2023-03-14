@@ -5,6 +5,7 @@ import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import logo from '../../images/icons/warehouse.png';
 import './Headers.css';
 
 const Headers = () => {
@@ -14,9 +15,11 @@ const Headers = () => {
     signOut(auth);
   }
   return (
-    <Navbar bg="light" expand="lg">
-      <Container fluid >
-        <Navbar.Brand href="#">SB WareHouse </Navbar.Brand>
+    <Navbar expand="lg" className="container">
+      <Container fluid>
+        <Navbar.Brand href="#">
+          <img className="logo" src={logo} alt="" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -41,39 +44,39 @@ const Headers = () => {
               </Link>
             </Nav.Link>
           </Nav>
-          {
-            user?
+          {user ? (
             <Nav className="d-flex ">
-            <NavDropdown
-              title="User Name"
-              className="me-2"
-              id="navbarScrollingDropdown"
-            >
-              <NavDropdown.Item >
-                <Link className="dropdown" to="/myitems">
-                  My Items
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item >
-                <Link className="dropdown" to="/addnewitem">
-                  Add Items
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item >
-                <Link className="dropdown" to="/manageinventory">
-                  Manage Items
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Button onClick={handleSignout}variant="outline-success">Sign Out</Button>
-          </Nav>
-
-            :
-            
-              <Link className=' login-btn' to="/login">Log in</Link>
-            
-          }
+              <NavDropdown
+                title="User Name"
+                className="me-2"
+                id="navbarScrollingDropdown"
+              >
+                <NavDropdown.Item>
+                  <Link className="dropdown" to="/myitems">
+                    My Items
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link className="dropdown" to="/addnewitem">
+                    Add Items
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item>
+                  <Link className="dropdown" to="/manageinventory">
+                    Manage Items
+                  </Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Button onClick={handleSignout} variant="outline-success">
+                Sign Out
+              </Button>
+            </Nav>
+          ) : (
+            <Link className=" login-btn" to="/login">
+              Log in
+            </Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

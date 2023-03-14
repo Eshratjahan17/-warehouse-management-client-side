@@ -11,7 +11,7 @@ const ItemDetails = () => {
   console.log(id);
   const [product,setProduct]=useState([]);
   useEffect(()=>{
-    const url = `https://stormy-temple-95989.herokuapp.com/inventory/${id}`;
+    const url = `http://localhost:5000/inventory/${id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())

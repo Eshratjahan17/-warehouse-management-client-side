@@ -21,7 +21,7 @@ const ManageInventoryItems = () => {
     const proceed=window.confirm("Are u sure?");
     if(proceed){
        console.log(id);
-       fetch(`https://stormy-temple-95989.herokuapp.com/inventory/${id}`, {
+       fetch(`http://localhost:5000/inventory/${id}`, {
          method: "DELETE",
        })
          .then((res) => res.json())

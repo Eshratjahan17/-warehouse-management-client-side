@@ -15,7 +15,7 @@ const AddItems = () => {
     const quantity = event.target.quantity.value;
     const picture = event.target.picture.value;
    const productDetail= {productName, supplierName,email, about, price, quantity, picture};
-   fetch("https://stormy-temple-95989.herokuapp.com/product", {
+   fetch("http://localhost:5000/product", {
      method: "POST",
      headers: {
        "Content-type": "application/json; charset=UTF-8",
