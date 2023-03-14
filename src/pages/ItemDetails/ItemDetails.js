@@ -11,7 +11,7 @@ const ItemDetails = () => {
   console.log(id);
   const [product,setProduct]=useState([]);
   useEffect(()=>{
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://ware-house-u1xf.onrender.com/inventory/${id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())

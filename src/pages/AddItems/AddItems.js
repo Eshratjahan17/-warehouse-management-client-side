@@ -15,7 +15,7 @@ const AddItems = () => {
     const quantity = event.target.quantity.value;
     const picture = event.target.picture.value;
    const productDetail= {productName, supplierName,email, about, price, quantity, picture};
-   fetch("http://localhost:5000/product", {
+   fetch("https://ware-house-u1xf.onrender.com/product", {
      method: "POST",
      headers: {
        "Content-type": "application/json; charset=UTF-8",

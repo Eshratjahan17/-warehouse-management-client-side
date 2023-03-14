@@ -34,7 +34,7 @@ const Login = () => {
      const handleLogin=async(event)=>{
        event.preventDefault();
       await signInWithEmailAndPassword(email,password);
-      const { data } = await axios.post("http://localhost:5000/login",{email});
+      const { data } = await axios.post("https://ware-house-u1xf.onrender.com/login",{email});
       localStorage.setItem('accessToken',data.accessToken);
       navigate(from, { replace: true });
         

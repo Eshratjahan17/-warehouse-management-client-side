@@ -12,13 +12,13 @@ const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
   
 
-  //http://localhost:5000/products?email=${email}
+  //https://ware-house-u1xf.onrender.com/products?email=${email}
 
   useEffect(() => {
     const getItems =async()=>{
       const email=user.email;
      
-      const url = `http://localhost:5000/products?email=${email}`;
+      const url = `https://ware-house-u1xf.onrender.com/products?email=${email}`;
       const { data } = await axios.get(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`

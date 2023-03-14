@@ -21,7 +21,7 @@ const ManageInventoryItems = () => {
     const proceed=window.confirm("Are u sure?");
     if(proceed){
        console.log(id);
-       fetch(`http://localhost:5000/inventory/${id}`, {
+       fetch(`https://ware-house-u1xf.onrender.com/inventory/${id}`, {
          method: "DELETE",
        })
          .then((res) => res.json())
